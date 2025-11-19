@@ -1,0 +1,10 @@
+dbt_migracao:
+  target: dev
+  outputs:
+    dev:
+      type: 'bigquery'
+      method: service-account
+      project: 'migracao-dbt'
+      dataset: "{{ env_var('DBT_DATABASE', 'dbt_dw') }}"
+      threads: 4
+      keyfile: 'E:\Estudos\Cursos da Udemy\dbt\.config\migracao-dbt-27890e5e3c07.json'
